@@ -6,7 +6,10 @@ export default function Menu() {
         <ul className="menu">
             <li>Students</li>
                 <div className="content">
-                    <Link to="/students">student list</Link>
+                    <Link to="/Students">student list</Link><br />
+                    <Link to="/student">student</Link><br/>
+                    <Link to="/addInfo">add</Link><br/>
+                    <Link to="/deleteInfo">delete</Link>
                 </div>
             <li>Courses</li>
                 <div className="content">
@@ -14,7 +17,7 @@ export default function Menu() {
                 </div>
             <li>Projects</li>
                 <div className="content">
-                    <Link to="/projects">projects list</Link>
+                    <Link to="/project">projects list</Link>
                 </div>
         </ul>
     )
