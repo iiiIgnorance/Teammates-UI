@@ -41,7 +41,8 @@ class deleteInfo extends React.Component {
     }
 
     delCourses = () => {
-        const{uniCourse, apiCourse, coursesKey, coursesValue} = this.state
+        //const{uniCourse, apiCourse, coursesKey, coursesValue} = this.state
+        const{uniCourse, apiCourse, coursesValue} = this.state
         this.setState({
             apiCourse : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/students/' + uniCourse + '/courses?crn=' + coursesValue
             //apiCourse : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/students/sj1234/courses?crn=4111'
@@ -86,17 +87,17 @@ class deleteInfo extends React.Component {
         return (
             <div>
                 <div className="projects">
-                    <h2>Search Student Projects</h2>
+                    <h2>Delete Student Projects</h2>
                     <input value = {this.state.uniProjects} name = "uniProjects" onChange={this.handleFrom}/>
                     <button onClick={this.delProjects}>delete</button>
                 </div>
                 <div className="information">
-                    <h2>Search Student Information</h2>
+                    <h2>Delete Student Information</h2>
                     <input value = {this.state.uniInfo} name = "uniInfo" onChange={this.handleFrom}/>
                     <button onClick={this.delInfo}>delete</button>
                 </div>
                 <div className="courses">
-                    <h2>Search Student Courses</h2>
+                    <h2>Delete Student Courses</h2>
                     <input value = {this.state.uniCourse} name = "uniCourse" onChange={this.handleFrom}/>
                     <input value = {this.state.coursesValue} name = "coursesValue" onChange={this.handleFrom}/>
                     <button onClick={this.delCourses}>delete</button>

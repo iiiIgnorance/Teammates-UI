@@ -33,7 +33,8 @@ class addInfo extends React.Component {
         })
     }
     addInfo = () => {
-        const{uniInfo, apiInfo, firstName, lastName, email, phone, major, interests} = this.state
+        //const{uniInfo, apiInfo, firstName, lastName, email, phone, major, interests} = this.state
+        const{uniInfo, apiInfo} = this.state
         this.setState({
             /*
             apiInfo : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/students/' + uniInfo
@@ -111,7 +112,7 @@ class addInfo extends React.Component {
         return (
             <div>
                 <div className="projects">
-                    <h2>Search Student Projects</h2>
+                    <h2>Add Student Projects</h2>
                     <input value = {this.state.uniProjects} name = "uniProjects" onChange={this.handleFrom}/>
                     <input value = {this.state.projectsCoursesKey} name = "projectsCoursesKey" onChange={this.handleFrom}/>
                     <input value = {this.state.projectsCoursesValue} name = "projectsCoursesValue" onChange={this.handleFrom}/>
@@ -120,7 +121,7 @@ class addInfo extends React.Component {
                     <button onClick={this.addProjects}>add</button>
                 </div>
                 <div className="information">
-                    <h2>Search Student Information</h2>
+                    <h2>Add Student Information</h2>
                     <input value = {this.state.uniInfo} name = "uniInfo" onChange={this.handleFrom}/>
                     <input value = {this.state.firstName} name = "firstName" onChange={this.handleFrom}/>
                     <input value = {this.state.lastName} name = "lastName" onChange={this.handleFrom}/>
@@ -131,7 +132,7 @@ class addInfo extends React.Component {
                     <button onClick={this.addInfo}>add</button>
                 </div>
                 <div className="courses">
-                    <h2>Search Student Courses</h2>
+                    <h2>Add Student Courses</h2>
                     <input value = {this.state.uniCourse} name = "uniCourse" onChange={this.handleFrom}/>
                     <input value = {this.state.coursesKey} name = "coursesKey" onChange={this.handleFrom}/>
                     <input value = {this.state.coursesValue} name = "coursesValue" onChange={this.handleFrom}/>

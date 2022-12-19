@@ -17,7 +17,10 @@ export default function Menu() {
                 </div>
             <li>Projects</li>
                 <div className="content">
-                    <Link to="/project">projects list</Link>
+                    <Link to="/projectList">projects list</Link><br/>
+                    <Link to="/projects">project</Link><br/>
+                    <Link to="/addProject">update</Link><br/>
+                    <Link to="/deleteProject">delete</Link>
                 </div>
         </ul>
     )
