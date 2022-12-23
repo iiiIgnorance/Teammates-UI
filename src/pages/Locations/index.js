@@ -1,14 +1,13 @@
 import React from 'react'
 import axios from 'axios'
-import './index.css'
 
-class projectList extends React.Component {
+class locationList extends React.Component {
 
     constructor() {
         super();
 
         this.state = {
-            api:'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects',
+            api:'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/locations',
             list:[]
         }
     }
@@ -32,7 +31,7 @@ class projectList extends React.Component {
         return (
             <div>
                 <div>
-                    <h2>Projects List</h2>
+                    <h2>Location List</h2>
                     <button onClick={this.getData}>Show</button>
                     <ul>
                         {
@@ -46,4 +45,4 @@ class projectList extends React.Component {
         )
     }
 }
-export default projectList;
+export default locationList;

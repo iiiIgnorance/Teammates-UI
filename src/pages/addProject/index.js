@@ -57,7 +57,7 @@ class addProject extends React.Component {
     updateUni = () => {
         const{projectUni, apiUni} = this.state
         this.setState({
-            apiUni : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/members/' + projectUni
+            apiUni : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/' + projectUni +  '/members'
         })
         console.log(projectUni, apiUni)
         this.putUni()
@@ -66,7 +66,7 @@ class addProject extends React.Component {
     updateLink = () => {
         const{projectLink, apiLink} = this.state
         this.setState({
-            apiLink : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/link/' + projectLink
+            apiLink : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/' + projectLink + '/link'
         })
         console.log(projectLink, apiLink)
         this.putLink()
@@ -105,10 +105,7 @@ class addProject extends React.Component {
 
     putUni=()=>{
         axios.put(this.state.apiUni,{
-            name: this.state.nameUni,
-            description: this.state.descriptionUni,
-            unis: this.state.unisUni,
-            link: this.state.linkUni,
+            unis: this.state.unisUni
         })
             .then((response) =>{
                 console.log(response);
@@ -120,10 +117,7 @@ class addProject extends React.Component {
 
     putLink=()=>{
         axios.put(this.state.apiLink,{
-            name: this.state.nameLink,
-            description: this.state.descriptionLink,
-            unis: this.state.unisLink,
-            link: this.state.linkLink,
+            link: this.state.linkLink
         })
             .then((response) =>{
                 console.log(response);
@@ -136,12 +130,9 @@ class addProject extends React.Component {
         return (
             <div>
                 <div className="projects">
-                    <h2>Update Project By Uni</h2>
+                    <h2>Update Project Members</h2>
                     <input value = {this.state.projectUni} name = "projectUni" onChange={this.handleFrom}/>
-                    <input value = {this.state.nameUni} name = "nameUni" onChange={this.handleFrom}/>
-                    <input value = {this.state.descriptionUni} name = "descriptionUni" onChange={this.handleFrom}/>
                     <input value = {this.state.unisUni} name = "unisUni" onChange={this.handleFrom}/>
-                    <input value = {this.state.linkUni} name = "linkUni" onChange={this.handleFrom}/>
                     <button onClick={this.updateUni}>update</button>
                 </div>
                 <div className="project">
@@ -153,7 +144,7 @@ class addProject extends React.Component {
                     <button onClick={this.addProject}>add</button>
                 </div>
                 <div className="Name">
-                    <h2>Update Project By Name</h2>
+                    <h2>Update Project</h2>
                     <input value = {this.state.projectName} name = "projectName" onChange={this.handleFrom}/>
                     <input value = {this.state.nameName} name = "nameName" onChange={this.handleFrom}/>
                     <input value = {this.state.descriptionName} name = "descriptionName" onChange={this.handleFrom}/>
@@ -163,11 +154,8 @@ class addProject extends React.Component {
                 </div>
 
                 <div className="Link">
-                    <h2>Update Project By Link</h2>
+                    <h2>Update Project Link</h2>
                     <input value = {this.state.projectLink} name = "projectLink" onChange={this.handleFrom}/>
-                    <input value = {this.state.nameLink} name = "nameLink" onChange={this.handleFrom}/>
-                    <input value = {this.state.descriptionLink} name = "descriptionLink" onChange={this.handleFrom}/>
-                    <input value = {this.state.unisLink} name = "unisLink" onChange={this.handleFrom}/>
                     <input value = {this.state.linkLink} name = "linkLink" onChange={this.handleFrom}/>
                     <button onClick={this.updateLink}>update</button>
                 </div>

@@ -1,49 +1,63 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react';
+import Pagination from '../Pagination/Pagination';
+//import data from './data/mock-data.json';
 import axios from 'axios'
-import './index.css'
+//import './style.scss';
 
-class studentList extends React.Component {
+let PageSize = 1;
 
-    constructor() {
-        super();
-
-        this.state = {
-            api:'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/students',
-            list:[]
-        }
-    }
-
-    getData=()=>{
-        axios.get(this.state.api)
-            .then((response) =>{
+export default function StudentList() {
+    const api = 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/students';
+    const [currentPage, setCurrentPage] = useState(1);
+    const [list, setList] = useState([]);
+    function getData(){
+        axios.get(api)
+            .then((response) => {
 
                 console.log(response.data.body);
-
-                this.setState({
-                    list:response.data.body
-                })
+                setList(response.data.body);
             })
             .catch(function (error) {
                 // handle error
                 console.log(error);
             });
+
     }
-    render() {
-        return (
-            <div>
-                <div>
-                    <h2>Student List</h2>
-                    <button onClick={this.getData}>Show</button>
-                    <ul>
-                        {
-                            this.state.list.map((value,key)=>{
-                                return<li  key={key}>{value}</li>
-                            })
-                        }
-                    </ul>
-                </div>
-            </div>
-        )
-    }
+    const currentTableData = useMemo(() => {
+        const firstPageIndex = (currentPage - 1) * PageSize;
+        const lastPageIndex = firstPageIndex + PageSize;
+        return list.slice(firstPageIndex, lastPageIndex);
+    }, [currentPage, list]);
+    return (
+        <>
+            <h2>Student List</h2>
+            <button onClick={getData}>Show</button>
+            <table>
+                <thead>
+                <tr>
+                    <th>uni</th>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    currentTableData.map((value,key)=> {
+                        return (
+                            <tr>
+                                <td key={key}>{value}</td>
+                            </tr>
+                        );
+                    })
+
+                }
+                </tbody>
+            </table>
+            <Pagination
+                className="pagination-bar"
+                currentPage={currentPage}
+                totalCount={list.length}
+                pageSize={PageSize}
+                onPageChange={page => setCurrentPage(page)}
+            />
+        </>
+    );
 }
-export default studentList;

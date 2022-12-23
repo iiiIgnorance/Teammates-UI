@@ -13,6 +13,11 @@ import deleteInfo from "../DeleteInfo";
 import projects from "../Project";
 import addProject from "../addProject";
 import deleteProject from "../deleteProject";
+import slack from "../slack";
+import locationList from "../Locations";
+import locations from "../Location";
+import addLocation from "../addLocation";
+import deleteLocation from "../deleteLocation";
 
 
 export default class Admin extends Component {
@@ -30,6 +35,11 @@ export default class Admin extends Component {
                 <TransitionRoute path='/projects' exact component={projects}/>
                 <TransitionRoute path='/addProject' exact component={addProject}/>
                 <TransitionRoute path='/deleteProject' exact component={deleteProject}/>
+                <TransitionRoute path='/locationList' exact component={locationList}/>
+                <TransitionRoute path='/locations' exact component={locations}/>
+                <TransitionRoute path='/addLocation' exact component={addLocation}/>
+                <TransitionRoute path='/deleteLocation' exact component={deleteLocation}/>
+                <TransitionRoute path='/slack' exact component={slack}/>
             </Layout>
         )
     }

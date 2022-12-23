@@ -26,7 +26,7 @@ class projects extends React.Component {
     searchUni = () => {
         const{uni, apiUni} = this.state
         this.setState({
-            apiUni : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/members/' + uni
+            apiUni : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/' + uni + '/members'
         },() => {console.log(uni, apiUni)});
         this.getUni()
     }
@@ -42,7 +42,7 @@ class projects extends React.Component {
     searchLink = () => {
         const{link, apiLink} = this.state
         this.setState({
-            apiLink : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/link/' + link
+            apiLink : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/' + link + '/link'
         })
         console.log(link, apiLink)
         this.getLink()
@@ -95,31 +95,23 @@ class projects extends React.Component {
         return (
             <div>
                 <div className="link">
-                    <h2>Search Projects By Link</h2>
+                    <h2>Search Project Link</h2>
                     <input value = {this.state.link} name = "link" onChange={this.handleFrom}/>
                     <button onClick={this.searchLink}>search</button>
-                    <p>{this.state.linkProject.name}</p>
-                    <p>{this.state.linkProject.description}</p>
-                    <p>{this.state.linkProject.members}</p>
-                    <p>{this.state.linkProject.link}</p>
+                    <p>{this.state.linkProject.data}</p>
+
                 </div>
                 <div className="uni">
-                    <h2>Search Projects By Uni</h2>
+                    <h2>Search Project Members</h2>
                     <input value = {this.state.uni} name = "uni" onChange={this.handleFrom}/>
                     <button onClick={this.searchUni}>search</button>
-                    <p>{this.state.uniProject.name}</p>
-                    <p>{this.state.uniProject.description}</p>
-                    <p>{this.state.uniProject.members}</p>
-                    <p>{this.state.uniProject.link}</p>
+                    <p>{this.state.uniProject.data}</p>
                 </div>
                 <div className="name">
-                    <h2>Search Projects By Name</h2>
+                    <h2>Search Project Description</h2>
                     <input value = {this.state.name} name = "name" onChange={this.handleFrom}/>
                     <button onClick={this.searchName}>search</button>
-                    <p>{this.state.nameProject.name}</p>
-                    <p>{this.state.nameProject.description}</p>
-                    <p>{this.state.nameProject.members}</p>
-                    <p>{this.state.nameProject.link}</p>
+                    <p>{this.state.nameProject.data}</p>
                 </div>
             </div>
         )

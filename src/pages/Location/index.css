@@ -1,0 +1,11 @@
+.students{
+    position: relative;
+}
+.countries{
+    position: relative;
+    top:30px;
+}
+.projectLink{
+    position: relative;
+    top:300px;
+}

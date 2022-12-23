@@ -11,10 +11,6 @@ export default function Menu() {
                     <Link to="/addInfo">add</Link><br/>
                     <Link to="/deleteInfo">delete</Link>
                 </div>
-            <li>Courses</li>
-                <div className="content">
-                    <Link to="/courses">courses list</Link>
-                </div>
             <li>Projects</li>
                 <div className="content">
                     <Link to="/projectList">projects list</Link><br/>
@@ -22,6 +18,14 @@ export default function Menu() {
                     <Link to="/addProject">update</Link><br/>
                     <Link to="/deleteProject">delete</Link>
                 </div>
+            <li>Location</li>
+                <div className="content">
+                    <Link to="/locationList">location list</Link><br/>
+                    <Link to="/locations">location</Link><br/>
+                    <Link to="/addLocation">add</Link><br/>
+                    <Link to="/deleteLocation">delete</Link><br/>
+                </div>
+            <li><a href="https://slack.com/" target="_blank">slack</a></li>
         </ul>
     )
 }

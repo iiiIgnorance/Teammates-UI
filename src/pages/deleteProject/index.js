@@ -14,7 +14,9 @@ class deleteProject extends React.Component {
             linkProject:[],
             name:'',
             uni:'',
-            link:''
+            uniName:'',
+            link:'',
+            linkName:''
         }
     }
     handleFrom = (e) => {
@@ -24,9 +26,9 @@ class deleteProject extends React.Component {
         })
     }
     delUni = () => {
-        const{uni, apiUni} = this.state
+        const{uni, apiUni, uniName} = this.state
         this.setState({
-            apiUni : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/members/' + uni
+            apiUni : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/'+ uniName + '/members/' + uni
         },() => {console.log(uni, apiUni)});
         this.deleteUni()
     }
@@ -42,7 +44,7 @@ class deleteProject extends React.Component {
     delLink = () => {
         const{link, apiLink} = this.state
         this.setState({
-            apiLink : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/link/' + link
+            apiLink : 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/projects/' + link + '/link'
         })
         console.log(link, apiLink)
         this.deleteLink()
@@ -84,17 +86,18 @@ class deleteProject extends React.Component {
         return (
             <div>
                 <div className="link">
-                    <h2>Delete Projects By Link</h2>
+                    <h2>Delete Projects Link</h2>
                     <input value = {this.state.link} name = "link" onChange={this.handleFrom}/>
                     <button onClick={this.delLink}>delete</button>
                 </div>
                 <div className="uni">
-                    <h2>Delete Projects By Uni</h2>
+                    <h2>Delete Projects Uni</h2>
+                    <input value = {this.state.uniName} name = "uniName" onChange={this.handleFrom}/>
                     <input value = {this.state.uni} name = "uni" onChange={this.handleFrom}/>
                     <button onClick={this.delUni}>delete</button>
                 </div>
                 <div className="name">
-                    <h2>Delete Projects By Name</h2>
+                    <h2>Delete Projects</h2>
                     <input value = {this.state.name} name = "name" onChange={this.handleFrom}/>
                     <button onClick={this.delName}>delete</button>
                 </div>
