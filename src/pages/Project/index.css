@@ -1,11 +1,11 @@
 .uni{
     position: relative;
+    top:300px;
 }
 .link{
     position: relative;
-    top:250px;
+    top:100px;
 }
 .name{
     position: relative;
-    top:400px;
 }

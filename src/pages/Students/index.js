@@ -10,8 +10,8 @@ export default function StudentList() {
     const api = 'https://tt992e54o3.execute-api.us-east-1.amazonaws.com/dev/students';
     const [currentPage, setCurrentPage] = useState(1);
     const [list, setList] = useState([]);
-    function getData(){
-        axios.get(api)
+    async function getData(){
+        await axios.get(api)
             .then((response) => {
 
                 console.log(response.data.body);
@@ -35,7 +35,6 @@ export default function StudentList() {
             <table>
                 <thead>
                 <tr>
-                    <th>uni</th>
                 </tr>
                 </thead>
                 <tbody>

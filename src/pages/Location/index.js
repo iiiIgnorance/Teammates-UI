@@ -95,6 +95,7 @@ class locations extends React.Component {
         return (
             <div>
                 <div className="link">
+                    <br/><br/>
                     <h2>Student Information</h2>
                     <input value = {this.state.uni} name = "uni" onChange={this.handleFrom}/>
                     <button onClick={this.searchUni}>search</button>
@@ -108,6 +109,7 @@ class locations extends React.Component {
                     <p>{this.state.students.data}</p>
                 </div>
                 <div className="countries">
+                    <br/><br/>
                     <h2>Search Country</h2>
                     <input value = {this.state.country} name = "country" onChange={this.handleFrom}/>
                     <button onClick={this.searchCountry}>search</button>

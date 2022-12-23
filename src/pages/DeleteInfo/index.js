@@ -101,7 +101,7 @@ class deleteInfo extends React.Component {
                     <input value = {this.state.uniCourse} name = "uniCourse" onChange={this.handleFrom}/>
                     <input value = {this.state.coursesValue} name = "coursesValue" onChange={this.handleFrom}/>
                     <button onClick={this.delCourses}>delete</button>
-                    i</div>
+                </div>
             </div>
         )
     }

@@ -30,6 +30,7 @@ class students extends React.Component {
         },() => {console.log(uniInfo, apiInfo)});
         this.getInfo()
     }
+
     searchProjects = () => {
         const{uniProjects, apiProjects} = this.state
         this.setState({
@@ -48,8 +49,8 @@ class students extends React.Component {
         this.getCourses()
     }
 
-    getInfo=()=>{
-        axios.get(this.state.apiInfo)
+    async getInfo(){
+        await axios.get(this.state.apiInfo)
             .then((response) =>{
                 // handle success
                 console.log(response.data.body);
@@ -62,8 +63,8 @@ class students extends React.Component {
                 console.log(error);
             });
     }
-    getProjects=()=>{
-        axios.get(this.state.apiProjects)
+    async getProjects(){
+        await axios.get(this.state.apiProjects)
             .then((response) =>{
                 // handle success
                 console.log(response.data.body);
@@ -77,8 +78,8 @@ class students extends React.Component {
             });
     }
 
-    getCourses=()=>{
-        axios.get(this.state.apiCourse)
+    async getCourses(){
+        await axios.get(this.state.apiCourse)
             .then((response) =>{
                 // handle success
                 console.log(response.data.body);

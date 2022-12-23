@@ -95,23 +95,26 @@ class projects extends React.Component {
         return (
             <div>
                 <div className="link">
+                    <br/>
+                    <br/>
                     <h2>Search Project Link</h2>
                     <input value = {this.state.link} name = "link" onChange={this.handleFrom}/>
                     <button onClick={this.searchLink}>search</button>
                     <p>{this.state.linkProject.data}</p>
 
                 </div>
-                <div className="uni">
-                    <h2>Search Project Members</h2>
-                    <input value = {this.state.uni} name = "uni" onChange={this.handleFrom}/>
-                    <button onClick={this.searchUni}>search</button>
-                    <p>{this.state.uniProject.data}</p>
-                </div>
                 <div className="name">
                     <h2>Search Project Description</h2>
                     <input value = {this.state.name} name = "name" onChange={this.handleFrom}/>
                     <button onClick={this.searchName}>search</button>
                     <p>{this.state.nameProject.data}</p>
+                </div>
+                <div className="uni">
+                    <br/>
+                    <h2>Search Project Members</h2>
+                    <input value = {this.state.uni} name = "uni" onChange={this.handleFrom}/>
+                    <button onClick={this.searchUni}>search</button>
+                    <p>{this.state.uniProject.data}</p>
                 </div>
             </div>
         )

@@ -19,12 +19,12 @@ export default function Menu() {
                     <Link to="/deleteProject">delete</Link>
                 </div>
             <li>Location</li>
-                <div className="content">
-                    <Link to="/locationList">location list</Link><br/>
-                    <Link to="/locations">location</Link><br/>
-                    <Link to="/addLocation">add</Link><br/>
-                    <Link to="/deleteLocation">delete</Link><br/>
-                </div>
+            <div className="content">
+                <Link to="/locationList">location list</Link><br/>
+                <Link to="/locations">location</Link><br/>
+                <Link to="/addLocation">add</Link><br/>
+                <Link to="/deleteLocation">delete</Link><br/>
+            </div>
             <li><a href="https://slack.com/" target="_blank">slack</a></li>
         </ul>
     )

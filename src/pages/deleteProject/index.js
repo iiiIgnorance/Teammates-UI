@@ -90,16 +90,16 @@ class deleteProject extends React.Component {
                     <input value = {this.state.link} name = "link" onChange={this.handleFrom}/>
                     <button onClick={this.delLink}>delete</button>
                 </div>
+                <div className="name">
+                    <h2>Delete Projects</h2>
+                    <input value = {this.state.name} name = "name" onChange={this.handleFrom}/>
+                    <button onClick={this.delName}>delete</button>
+                </div>
                 <div className="uni">
                     <h2>Delete Projects Uni</h2>
                     <input value = {this.state.uniName} name = "uniName" onChange={this.handleFrom}/>
                     <input value = {this.state.uni} name = "uni" onChange={this.handleFrom}/>
                     <button onClick={this.delUni}>delete</button>
-                </div>
-                <div className="name">
-                    <h2>Delete Projects</h2>
-                    <input value = {this.state.name} name = "name" onChange={this.handleFrom}/>
-                    <button onClick={this.delName}>delete</button>
                 </div>
             </div>
         )
